@@ -1,0 +1,33 @@
+.menu-header{
+  width: 100%;
+  padding: 20px 100px;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu{
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.logo{
+  margin-right: 50px;
+  color: #ff8724;
+}
+
+.menu-itens{
+  width: 500px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.menu-itens li{
+  font-weight: bold;
+  cursor: pointer;
+}
