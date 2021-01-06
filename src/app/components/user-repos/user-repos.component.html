@@ -1,0 +1,26 @@
+<div class="user-container">
+  <div class="user-wrapper">
+    <h1>Usuários</h1>
+    <p>Aqui você pode procurar por algum usuário específico do GitHub. Digite corretamente no campo abaixo o nome do usuário</p>
+    <div class="search-container">
+      <form class="search-form">
+        <div class="search-form-container">
+          <label for="username">Nome de usuário do GitHub:</label>
+          <input [(ngModel)]="userName" type="text" name="username" class="username" placeholder="Ex: user-name, UserName..."/>
+          <button class="btn-pesquisar" (click)="getUsers()">Pesquisar</button>
+        </div>
+      </form>
+      <div class="user-card-container">
+        <div class="user-card-wrapper">
+          <div class="user-card" *ngFor="let user of users">
+            <h3>{{user.name}}</h3>
+            <p>Bio: {{user.bio}}</p>
+            <p>Local: {{user.location}}</p>
+            <a href="{{user.blog}}" target="_blank">LinkedIn</a>
+            <p>Link do GitHub: <a href="{{user.html_url}}"></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

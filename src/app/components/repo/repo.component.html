@@ -1,0 +1,18 @@
+<div class="repo-container">
+  <div class="repo-wrapper">
+    <h1>Repositórios</h1>
+    <p>Nessa página você pode pesquisar os repositórios do GitHub digitando o nome do usuário no campo abaixo</p>
+    <div class="repo-content">
+      <form class="repo-form">
+        <div class="repo-form-container">
+          <label>Digite o nome do usuário do GitHub</label>
+          <input [(ngModel)]="userNameRepo" name="userNameRepo" type="text" placeholder="Ex: user-name, UserName"/>
+          <button class="btn-pesquisar" (click)="getRepo()">Pesquisar</button>
+        </div>
+      </form>
+      <div class="repo-view">
+        <!-- A tabela vem aqui -->
+      </div>
+    </div>
+  </div>
+</div>
