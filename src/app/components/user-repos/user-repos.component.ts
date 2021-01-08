@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/User';
 import { UserService } from 'src/services/user.service';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { RepoService } from 'src/services/repo.service';
 
 @Component({
   selector: 'app-user-repos',
@@ -10,20 +11,34 @@ import { map } from 'rxjs/operators';
 })
 export class UserReposComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private repoService: RepoService, private http: HttpClient) { }
 
-  users: any;
+  users: any = [];
+  repos: any = [];
+  rowData: any = [];
   userName: string;
 
-  ngOnInit() {
+  //Ag Grid
+  columnDefs = [
+    {field: 'name'},
+    {field: 'Repo'},
+    {field: 'Forks'}
+  ]
 
+  ngOnInit() {
   }
 
   getUsers(){
-    this.userService.getUsersByName(this.userName).subscribe((res: User[]) => {
+    //Get Users
+    this.userService.getUsersByName(this.userName).subscribe(res => {
       this.users = res;
-      console.log(this.users);
-    })
+    });
+
+    //Get Repos
+    this.repoService.getUsersRepo(this.userName).subscribe(res => {
+      this.repos = res;
+      console.log(res)
+    });
   }
 
 }

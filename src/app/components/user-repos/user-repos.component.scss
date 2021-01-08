@@ -1,6 +1,5 @@
 .user-container{
   width: 100%;
-  height: 100vh;
 }
 
 .user-wrapper{
@@ -27,6 +26,12 @@
   width: 500px;
   display: flex;
   flex-direction: column;
+}
+
+.search-container{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .search-form-container{
@@ -76,4 +81,39 @@
 
 .btn-pesquisar:active{
   transform: scale(0.9);
+}
+
+
+//USER CARD
+.user-card{
+  width: 500px;
+  padding: 30px;
+  height: auto;
+  box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.1);
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.card-info{
+  margin-left: 30px;
+}
+
+.user-card-img{
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+.card-info h3{
+  margin-bottom: 30px;
+}
+
+
+//REPO CARD
+
+.repo-card{
+  width: 400px;
+  padding: 30px;
+  box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.1);
 }

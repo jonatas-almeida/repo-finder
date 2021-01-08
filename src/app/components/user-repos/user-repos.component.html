@@ -12,13 +12,24 @@
       </form>
       <div class="user-card-container">
         <div class="user-card-wrapper">
-          <div class="user-card" *ngFor="let user of users">
-            <h3>{{user.name}}</h3>
-            <p>Bio: {{user.bio}}</p>
-            <p>Local: {{user.location}}</p>
-            <a href="{{user.blog}}" target="_blank">LinkedIn</a>
-            <p>Link do GitHub: <a href="{{user.html_url}}"></a></p>
+          <div class="user-card">
+            <div class="card-img">
+              <img class="user-card-img" src="{{users.avatar_url}}" alt="{{users.login}}">
+            </div>
+            <div class="card-info">
+              <h1>{{users.name}}</h1>
+              <h3>{{users.login}}</h3>
+              <p>{{users.bio}}</p>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="repos-container">
+      <div class="repos-wrapper">
+        <div class="repo-card" *ngFor="let repo of repos">
+          <h1>{{repo.name}}</h1>
         </div>
       </div>
     </div>
