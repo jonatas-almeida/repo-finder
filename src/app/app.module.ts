@@ -9,6 +9,7 @@ import { HomeComponent } from '../app/views/home/home.component';
 import { UserReposComponent } from '../app/components/user-repos/user-repos.component';
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { RepoComponent } from './components/repo/repo.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RepoComponent } from './components/repo/repo.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgGridModule.withComponents([])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Repo } from 'src/app/models/Repo';
 import { RepoService } from 'src/services/repo.service';
 
 @Component({
@@ -15,7 +14,7 @@ export class RepoComponent implements OnInit {
   ngOnInit() {
   }
 
-  repos: Repo[];
+  repos: any = [];
   userNameRepo: string;
 
   getRepo(){
