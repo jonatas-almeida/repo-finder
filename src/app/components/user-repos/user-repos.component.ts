@@ -26,6 +26,7 @@ export class UserReposComponent implements OnInit {
     //Get Users
     this.userService.getUsersByName(this.userName).subscribe(res => {
       this.users = res;
+      //Adiciona o nome do usuário ao localStorage para caso a página seja recarregada
       localStorage.setItem('user', this.users.login);
     }, error =>
       alert(`Não foi possível achar o usuário`)
@@ -34,7 +35,6 @@ export class UserReposComponent implements OnInit {
     //Get Repos
     this.repoService.getUsersRepo(this.userName).subscribe(res => {
       this.repos = res;
-      console.log(res)
     });
   }
 

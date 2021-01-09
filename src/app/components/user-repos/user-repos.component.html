@@ -1,7 +1,7 @@
 <div class="user-container">
   <div class="user-wrapper">
-    <h1>Usuários</h1>
-    <p>Aqui você pode procurar por algum usuário específico do GitHub. Digite corretamente no campo abaixo o nome do usuário</p>
+    <h1 class="page-title">Usuários</h1>
+    <p class="page-description">Aqui você pode procurar por algum usuário específico do GitHub. Digite corretamente no campo abaixo o nome do usuário</p>
     <div class="search-container">
       <form class="search-form">
         <div class="search-form-container">
@@ -17,7 +17,7 @@
               <img class="user-card-img" src="{{users.avatar_url}}" alt="{{users.login}}">
             </div>
             <div class="card-info">
-              <h1>{{users.name}}</h1>
+              <h1 class="card-info-name">{{users.name}}</h1>
               <h3>{{users.login}}</h3>
               <p>{{users.bio}}</p>
             </div>
@@ -28,8 +28,10 @@
 
     <div class="repos-container">
       <h1 class="repo-title">Repositórios</h1>
-      <button class="btn-filtrar" (click)="recentRepo()">Mais Recente</button>
-      <button class="btn-filtrar" (click)="olderRepo()">Mais antigo</button>
+      <div class="button-filter">
+        <button class="btn-filtrar" (click)="recentRepo()">Recente</button>
+        <button class="btn-filtrar" (click)="olderRepo()">Antigo</button>
+      </div>
       <div class="repos-wrapper">
         <div *ngIf="repos <= 0">
           Os repositórios aparecerão aqui
@@ -39,7 +41,7 @@
             <p class="repo-description">{{repo.description}}</p>
             <p class="repo-forks">Forks: {{repo.forks}}</p>
             <p class="repo-starred">Starred: {{repo.stargazers_count}}</p>
-            <button class="btn-detalhes">Ir para o repositório</button>
+            <a class="btn-detalhes" target="_blank" href="{{repo.html_url}}">Ir para o repositório</a>
           </div>
       </div>
     </div>

@@ -1,12 +1,13 @@
 .menu-header{
-  width: 100%;
-  padding: 20px 100px;
+  padding: 20px;
   box-sizing: border-box;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  background: white;
 }
 
 .menu{
-  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
   background: white;
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +21,7 @@
 }
 
 .menu-itens{
-  width: 300px;
+  width: 200px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -30,4 +31,39 @@
 .menu-itens li{
   font-weight: bold;
   cursor: pointer;
+}
+
+
+
+
+/*RESPONSIVO*/
+@media only screen and (max-width: 375px){
+  *{
+    padding: 0;
+  }
+
+  .logo{
+    font-size: 14pt;
+  }
+
+  .menu-itens{
+    width: 100px;
+    margin-top: 20px;
+  }
+
+  .menu-itens li{
+    font-size: 10pt;
+  }
+}
+
+@media only screen and (max-width: 586px){
+  .menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-itens{
+    width: 200px;
+  }
 }
