@@ -3,6 +3,8 @@
 }
 
 .user-wrapper{
+  max-width: 1500px;
+  margin: 0 auto;
   padding: 100px;
 }
 
@@ -95,6 +97,19 @@
   align-items: center;
 }
 
+.btn-filtrar{
+  width: 200px;
+  padding: 15px;
+  background: #ff8724;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  font-size: 14pt;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
 .card-info{
   margin-left: 30px;
 }
@@ -112,8 +127,51 @@
 
 //REPO CARD
 
+.repos-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.repo-title{
+  margin: 50px 0px;
+}
+
 .repo-card{
   width: 400px;
   padding: 30px;
   box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.1);
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 10px;
+}
+
+.repo-card h3{
+  font-size: 16pt;
+  margin-bottom: 20px;
+  color: #ff8724;
+}
+
+.repo-description{
+  font-weight: bold;
+  color: #c0c0c0;
+}
+
+.btn-detalhes{
+  width: 200px;
+  padding: 15px;
+  background: #ff8724;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.repo-forks{
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
