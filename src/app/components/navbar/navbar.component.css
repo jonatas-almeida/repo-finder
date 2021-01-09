@@ -20,7 +20,7 @@
 }
 
 .menu-itens{
-  width: 500px;
+  width: 300px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
