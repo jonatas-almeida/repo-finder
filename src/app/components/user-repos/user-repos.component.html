@@ -5,9 +5,15 @@
     <div class="search-container">
       <form class="search-form">
         <div class="search-form-container">
-          <label for="username">Nome de usuário do GitHub:</label>
-          <input [(ngModel)]="userName" type="text" name="username" class="username" placeholder="Ex: user-name, UserName..."/>
-          <button class="btn-pesquisar" (click)="getUsers()">Pesquisar</button>
+          <form [formGroup]="registerForm">
+            <label for="username">Nome de usuário do GitHub:</label>
+            <input [(ngModel)]="userName" type="text" formControlName="username" name="username" class="username" placeholder="Ex: user-name, UserName..." [ngClass]="{'is-invalid': registerForm.get('username').errors && registerForm.get('username').touched}" />
+
+            <div *ngIf="registerForm.get('username').hasError('required') && registerForm.get('username').touched" class="invalid-feedback">
+              O nome de usuário é obrigatório
+            </div>
+            <button [disabled]="!registerForm.valid" class="btn-pesquisar" (click)="getUsers()">Pesquisar</button>
+          </form>
         </div>
       </form>
       <div class="user-card-container">
