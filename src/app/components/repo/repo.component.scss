@@ -45,3 +45,55 @@
   border-radius: 50%;
   margin-right: 10px;
 }
+
+
+
+/*RESPONSIVO*/
+@media only screen and (max-width: 375px){
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .ranking-wrapper{
+    padding: 20px;
+  }
+
+  .ranking-wrapper p{
+    margin-top: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .ranking-card{
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+
+
+@media only screen and (max-width: 425px){
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .ranking-wrapper{
+    padding: 20px;
+  }
+
+  .ranking-wrapper p{
+    margin-top: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .ranking-card{
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}

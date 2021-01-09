@@ -22,7 +22,6 @@ export class RepoComponent implements OnInit {
   getAllRepos(){
     this.userService.getAllUsers().subscribe(response => {
       this.ranking = response;
-      console.log(response);
     })
   }
 
