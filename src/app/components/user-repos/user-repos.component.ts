@@ -3,6 +3,7 @@ import { UserService } from 'src/services/user.service';
 import { map, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { RepoService } from 'src/services/repo.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-repos',
@@ -11,15 +12,24 @@ import { RepoService } from 'src/services/repo.service';
 })
 export class UserReposComponent implements OnInit {
 
-  constructor(private userService: UserService, private repoService: RepoService, private http: HttpClient) { }
+  constructor(private userService: UserService, private repoService: RepoService, private fb: FormBuilder) { }
 
   users: any = [];
   repos: any = [];
   userName: string;
+  registerForm: FormGroup;
 
 
   ngOnInit() {
+    this.validation();
     this.getUserOnReload();
+  }
+
+  //Validaçao do campo de busca
+  validation(){
+    this.registerForm = this.fb.group({
+      username: ['', Validators.required]
+    })
   }
 
   getUsers(){
@@ -32,6 +42,10 @@ export class UserReposComponent implements OnInit {
       alert(`Não foi possível achar o usuário`)
     );
 
+    this.getRepos();
+  }
+
+  getRepos(){
     //Get Repos
     this.repoService.getUsersRepo(this.userName).subscribe(res => {
       this.repos = res;
