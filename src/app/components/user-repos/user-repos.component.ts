@@ -18,21 +18,19 @@ export class UserReposComponent implements OnInit {
   rowData: any = [];
   userName: string;
 
-  //Ag Grid
-  columnDefs = [
-    {field: 'name'},
-    {field: 'Repo'},
-    {field: 'Forks'}
-  ]
 
   ngOnInit() {
+    this.getUserOnReload();
   }
 
   getUsers(){
     //Get Users
     this.userService.getUsersByName(this.userName).subscribe(res => {
       this.users = res;
-    });
+      localStorage.setItem('user', this.users.login);
+    }, error =>
+      alert(`Não foi possível achar o usuário`)
+    );
 
     //Get Repos
     this.repoService.getUsersRepo(this.userName).subscribe(res => {
@@ -40,5 +38,44 @@ export class UserReposComponent implements OnInit {
       console.log(res)
     });
   }
+
+  //Mantém as informações do usuário salvas quando recarrega a página
+  getUserOnReload(){
+    //Se existir algum usuário no Local Storage ele puxa as informações de volta
+    if(this.userName = localStorage.getItem('user')){
+      this.getUsers();
+    }
+    //Se não existir, ele não puxa nenhuma informção
+    else{
+      return null;
+    }
+  }
+
+
+    recent(){
+    this.repos.sort(function(a, b) {
+      if(a.created_at < b.created_at){
+        return 1;
+      }
+      if(b.created_at < a.created_at){
+        return -1;
+      }
+      return 0;
+    })
+  }
+
+
+  olderRepo(){
+    this.repos.sort(function(a, b) {
+      if(a.created_at > b.created_at){
+        return 1;
+      }
+      if(b.created_at > a.created_at){
+        return -1;
+      }
+      return 0;
+    })
+  }
+
 
 }

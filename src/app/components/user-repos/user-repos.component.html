@@ -27,10 +27,20 @@
     </div>
 
     <div class="repos-container">
+      <h1 class="repo-title">Repositórios</h1>
+      <button class="btn-filtrar" (click)="recent()">Mais Recente</button>
+      <button class="btn-filtrar" (click)="olderRepo()">Mais antigo</button>
       <div class="repos-wrapper">
-        <div class="repo-card" *ngFor="let repo of repos">
-          <h1>{{repo.name}}</h1>
+        <div *ngIf="repos <= 0">
+          Os repositórios aparecerão aqui
         </div>
+          <div class="repo-card" *ngFor="let repo of repos">
+            <h3 class="repo-name">{{repo.name}}</h3>
+            <p class="repo-description">{{repo.description}}</p>
+            <p class="repo-forks">Forks: {{repo.forks}}</p>
+            <p class="repo-starred">Starred: {{repo.stargazers_count}}</p>
+            <button class="btn-detalhes">Ir para o repositório</button>
+          </div>
       </div>
     </div>
   </div>
