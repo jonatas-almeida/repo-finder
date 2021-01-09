@@ -1,18 +1,15 @@
-<div class="repo-container">
-  <div class="repo-wrapper">
-    <h1>Repositórios</h1>
-    <p>Nessa página você pode pesquisar os repositórios do GitHub digitando o nome do usuário no campo abaixo</p>
-    <div class="repo-content">
-      <form class="repo-form">
-        <div class="repo-form-container">
-          <label>Digite o nome do usuário do GitHub</label>
-          <input [(ngModel)]="userNameRepo" name="userNameRepo" type="text" placeholder="Ex: user-name, UserName"/>
-          <button class="btn-pesquisar" (click)="getRepo()">Pesquisar</button>
+<div class="ranking-wrapper">
+      <h1>Ranking de Usuários</h1>
+      <p>Abaixo estão listados os usuários mais ativos do GitHub</p>
+      <div class="raking-container">
+        <div class="ranking-content">
+          <div class="ranking-card">
+            <h3>{{ranking.items[0].login}}</h3>
+            <h3>{{ranking.items[1].login}}</h3>
+            <h3>{{ranking.items[2].login}}</h3>
+            <h3>{{ranking.items[3].login}}</h3>
+            <h3>{{ranking.items[4].login}}</h3>
+          </div>
         </div>
-      </form>
-      <div class="repo-view">
-        <!-- A tabela vem aqui -->
       </div>
     </div>
-  </div>
-</div>

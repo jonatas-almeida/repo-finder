@@ -15,7 +15,6 @@ export class UserReposComponent implements OnInit {
 
   users: any = [];
   repos: any = [];
-  rowData: any = [];
   userName: string;
 
 
@@ -45,14 +44,15 @@ export class UserReposComponent implements OnInit {
     if(this.userName = localStorage.getItem('user')){
       this.getUsers();
     }
-    //Se não existir, ele não puxa nenhuma informção
+    //Se não existir, ele não puxa nenhuma informação
     else{
       return null;
     }
   }
 
 
-    recent(){
+  //Métodos para filtrar por repositórios mais recentes (recentRepo()) e pelos mais antigos (olderRepo())
+    recentRepo(){
     this.repos.sort(function(a, b) {
       if(a.created_at < b.created_at){
         return 1;
@@ -63,8 +63,6 @@ export class UserReposComponent implements OnInit {
       return 0;
     })
   }
-
-
   olderRepo(){
     this.repos.sort(function(a, b) {
       if(a.created_at > b.created_at){

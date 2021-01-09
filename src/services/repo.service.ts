@@ -11,9 +11,6 @@ export class RepoService {
 
   constructor(private http: HttpClient) { }
 
-  getAllRepo():Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}repos`);
-  }
 
   getUsersRepo(userNameRepo: string):Observable<any>{
     return this.http.get<any>(`${this.baseUrl}users/${userNameRepo}/repos`);
